@@ -16,7 +16,11 @@
 //     std::cout<<&vec<<std::endl;
 //     return vec;
 // }
-
+int main(int argc, char const *argv[])
+{
+    
+    return 0;
+}
 // using namespace std;
 // using namespace std::chrono;
 
@@ -45,16 +49,16 @@
 //        number += 5;
 //     }
 // }
-int main() {
-    std::cout<<std::setw(10)<<50270502;
-    std::cout<<std::setw(15)<<50270502;
-    std::cout<<std::setw(15)<<50270502;
-    std::cout<<std::setw(15)<<50270502;
-    std::cout<<std::setw(15)<<50270502<<std::endl;
-    std::cout<<std::setw(10)<<50270502;
-    std::cout<<std::setw(15)<<50270502;
-    std::cout<<std::setw(15)<<50270502;
-    std::cout<<std::setw(15)<<50270502;
-    std::cout<<std::setw(15)<<50270502<<std::endl;
-    return 0;
-}
+// int main() {
+//     std::cout<<std::setw(10)<<50270502;
+//     std::cout<<std::setw(15)<<50270502;
+//     std::cout<<std::setw(15)<<50270502;
+//     std::cout<<std::setw(15)<<50270502;
+//     std::cout<<std::setw(15)<<50270502<<std::endl;
+//     std::cout<<std::setw(10)<<50270502;
+//     std::cout<<std::setw(15)<<50270502;
+//     std::cout<<std::setw(15)<<50270502;
+//     std::cout<<std::setw(15)<<50270502;
+//     std::cout<<std::setw(15)<<50270502<<std::endl;
+//     return 0;
+// }

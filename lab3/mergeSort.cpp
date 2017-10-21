@@ -9,8 +9,7 @@ void Merge(std::vector<int>& a, int start, int end, int mid) {
     k = 0;
     j = mid + 1;
     while (i <= mid && j <= end) {
-        if (a[i] < a[j]) {
-            merge_compare++;
+        if (++merge_compare && a[i] < a[j]) {  //++merge_compare will always be true
             temp[k] = a[i];
             k++; i++;
         } else {
