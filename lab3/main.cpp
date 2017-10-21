@@ -13,12 +13,12 @@
 #define GET_T1() t1 = std::chrono::high_resolution_clock::now()
 #define GET_T2() t2 = std::chrono::high_resolution_clock::now()
 static std::chrono::high_resolution_clock::time_point t1,t2;
-static int merge_time=0;
-static int insert_time=0;
-static int merge_compare=0;
-static int insert_compare=0;
+static unsigned long long int merge_time=0;
+static unsigned long long int insert_time=0;
+static unsigned long long int merge_compare=0;
+static unsigned long long int insert_compare=0;
 
-void printValues(int size, int merge_time, int insert_time, int merge_compare, int insert_compare );
+void printValues(int size, unsigned long long int merge_time, unsigned long long int insert_time, unsigned long long int merge_compare, unsigned long long int insert_compare );
 static std::vector<int> generate_random_vector(int size, int max);
 static std::vector<int> generate_ascending_vector(int size);
 static std::vector<int> generate_descending_vector(int size);
@@ -51,7 +51,7 @@ int main() {
         printValues(size, merge_time/ITERATION, insert_time/ITERATION, merge_compare/ITERATION, insert_compare/ITERATION);
     }
     // 10000 to 1,000,000 increase by 10,000
-    for(int size=10000; size<1000000; size+=1000){
+    for(int size=10000; size<1000000; size+=5000){
         std::vector<int> a = generate_random_vector(size,size);
         merge_time = 0;
         insert_time = 0;
@@ -78,7 +78,7 @@ int main() {
 
     
 }
-void printValues(int size, int merge_time, int insert_time, int merge_compare, int insert_compare ){
+void printValues(int size, unsigned long long int merge_time, unsigned long long int insert_time, unsigned long long int merge_compare, unsigned long long int insert_compare ){
     std::cout<<std::setw(10)<<size;
     std::cout<<std::setw(15)<<merge_time;
     std::cout<<std::setw(15)<<insert_time;

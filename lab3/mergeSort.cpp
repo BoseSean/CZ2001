@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 #include "mergeSort.hpp"
-static int merge_compare=0;
+static unsigned long long int merge_compare=0;
 
 void Merge(std::vector<int>& a, int start, int end, int mid) {
     int i, j, k, temp[end - start + 1];
@@ -46,8 +46,8 @@ void rMergeSort(std::vector<int>& a, int start, int end) {
 void MergeSort(std::vector<int>& a){
     rMergeSort(a,0, a.size()-1);
 }
-int getMergeCompare(){
-    int i = merge_compare;
+unsigned long long int getMergeCompare(){
+    unsigned long long int i = merge_compare;
     merge_compare = 0;
     return i;
 }

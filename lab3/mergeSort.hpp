@@ -2,4 +2,4 @@
 
 void MergeSort(std::vector<int>& a);
 
-int getMergeCompare();
+unsigned long long int getMergeCompare();

@@ -1,4 +1,4 @@
 #include <vector>
 
 void InsertionSort( std::vector<int> &a);
-int getInsertCompare();
+unsigned long long int getInsertCompare();
