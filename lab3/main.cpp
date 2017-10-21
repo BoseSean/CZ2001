@@ -33,7 +33,7 @@ int main() {
         merge_time = 0;
         insert_time = 0;
         for(int iter=0; iter<ITERATION; iter++){
-            std::vector<int> a = generate_ascending_vector(size);
+            std::vector<int> a = generate_descending_vector(size);
             std::vector<int> b = a; //make a copy of vector a
             GET_T1();
             MergeSort(a);
@@ -55,7 +55,7 @@ int main() {
         merge_time = 0;
         insert_time = 0;
         for(int iter=0; iter<ITERATION; iter++){
-            std::vector<int> a = generate_ascending_vector(size);
+            std::vector<int> a = generate_descending_vector(size);
             std::vector<int> b = a; //make a copy of vector a
             GET_T1();
             MergeSort(a);
