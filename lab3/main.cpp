@@ -52,7 +52,7 @@ int main() {
     //     printValues(size, merge_time/ITERATION, insert_time/ITERATION, merge_compare/ITERATION, insert_compare/ITERATION);
     // }
     // 10000 to 1,000,000 increase by 10,000
-    for(int size=10000; size<1000000; size+=20000){
+    for(int size=220000; size<1000000; size+=20000){
         std::vector<int> a = generate_random_vector(size,size);
         merge_time = 0;
         insert_time = 0;
