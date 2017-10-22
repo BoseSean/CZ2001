@@ -8,7 +8,7 @@ void InsertionSort( std::vector<int> &a) {
     {
         key = a[j];
         
-        for (i = j - 1; ++insert_compare && (i >= 0) && (a[i] < key); i--)    //++merge_compare will always be true
+        for (i = j - 1; ++insert_compare && (i >= 0) && (a[i] > key); i--)    //++merge_compare will always be true
         {
             
             a[i + 1] = a[i];

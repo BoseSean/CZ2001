@@ -26,7 +26,7 @@ static std::vector<int> generate_descending_vector(int size);
 
 int main() {
 
-    std::cout<<std::endl<<"====================================RANDOM====================================="<<std::endl;
+    std::cout<<std::endl<<"=====================================RANDOM====================================="<<std::endl;
     std::cout<<std::setw(25)<<"merge"<<std::setw(15)<<"insert"<<std::setw(20)<<"merge"<<std::setw(20)<<"insert"<<std::endl;
     std::cout<<std::setw(10)<<"Data size"<<std::setw(15)<<"Time use(ms)"<<std::setw(35)<<"Comparison"<<std::endl;
     for(int size=1000; size<10000; size+=1000){
@@ -62,7 +62,7 @@ int main() {
         printValues(size, merge_time/ITERATION, insert_time/ITERATION, merge_compare/ITERATION, insert_compare/ITERATION);
     }
 
-    std::cout<<std::endl<<"===================================ASCENDING==================================="<<std::endl;
+    std::cout<<std::endl<<"====================================ASCENDING==================================="<<std::endl;
     std::cout<<std::setw(25)<<"merge"<<std::setw(15)<<"insert"<<std::setw(20)<<"merge"<<std::setw(20)<<"insert"<<std::endl;
     std::cout<<std::setw(10)<<"Data size"<<std::setw(15)<<"Time use(ms)"<<std::setw(35)<<"Comparison"<<std::endl;
     for(int size=1000; size<10000; size+=1000){
@@ -98,7 +98,7 @@ int main() {
         printValues(size, merge_time/ITERATION, insert_time/ITERATION, merge_compare/ITERATION, insert_compare/ITERATION);
     }
 
-    std::cout<<std::endl<<"===================================DESCENDING=================================="<<std::endl;
+    std::cout<<std::endl<<"====================================DESCENDING=================================="<<std::endl;
     std::cout<<std::setw(25)<<"merge"<<std::setw(15)<<"insert"<<std::setw(20)<<"merge"<<std::setw(20)<<"insert"<<std::endl;
     std::cout<<std::setw(10)<<"Data size"<<std::setw(15)<<"Time use(ms)"<<std::setw(35)<<"Comparison"<<std::endl;
     for(int size=1000; size<10000; size+=1000){
@@ -154,14 +154,14 @@ static std::vector<int> generate_random_vector(int size){
     return vec;
 }
 
-static std::vector<int> generate_ascending_vector(int size){
+std::vector<int> generate_ascending_vector(int size){
     std::vector<int> vec(size);
     int n=1;
     generate(vec.begin(), vec.end(), [&n] { return n++;});
     return vec;
 }
 
-static std::vector<int> generate_descending_vector(int size){
+std::vector<int> generate_descending_vector(int size){
     std::vector<int> vec(size);
     int n=size;
     generate(vec.begin(), vec.end(), [&n] { return n--;});
