@@ -4,72 +4,67 @@
 #include <algorithm>
 #include <iterator>
 #include <functional>
+#include <chrono>
 #include <iomanip>
-#include "main.cpp"
+#include "mergeSort.hpp"
 #include "insertionSort.hpp"
-// static std::chrono::high_resolution_clock::time_point t1,t2;
 
-// #define GET_T1() t1 = std::chrono::high_resolution_clock::now()
-// #define GET_T2() t2 = std::chrono::high_resolution_clock::now()
-// std::vector<int> generate_ascending_vector(int size){
-//     std::vector<int> vec(size);
-//     int n=1;
-//     generate(vec.begin(), vec.end(), [&n] { return n++;});
-//     std::cout<<&vec<<std::endl;
-//     return vec;
-// }
+static std::vector<int> generate_random_vector(int size);
+static std::vector<int> generate_ascending_vector(int size);
+static std::vector<int> generate_descending_vector(int size);
+static void print(std::vector<int>& a);
 int main(int argc, char const *argv[])
 {
-    std::vector<int> a =  generate_ascending_vector(10);
+    std::vector<int> a = generate_random_vector(15);
+    std::vector<int> b = a;
+    std::cout<<"Insertion sort:"<<std::endl;
+    std::cout<<"a: ";
+    print(a);
     InsertionSort(a);
-    std::vector<int> b =  generate_descending_vector(10);
-    for (int i:a){
+    std::cout<<"a: ";
+    print(a);
+std::cout<<"Merge sort:"<<std::endl;
+    std::cout<<"b: ";
+    print(b);
+    MergeSort(b);
+    std::cout<<"b: ";
+    print(b);
+    return 0;
+}
+
+
+
+static std::vector<int> generate_random_vector(int size){
+    // First create an instance of an engine.
+    std::random_device rnd_device;
+    // Specify the engine and distribution.
+    std::mt19937 mersenne_engine(rnd_device());
+    std::uniform_int_distribution<int> dist(1, size);
+
+    auto gen = std::bind(dist, mersenne_engine);
+    std::vector<int> vec(size);
+    
+    std::generate(begin(vec), end(vec), gen);
+
+    return vec;
+}
+
+static std::vector<int> generate_ascending_vector(int size){
+    std::vector<int> vec(size);
+    int n=1;
+    generate(vec.begin(), vec.end(), [&n] { return n++;});
+    return vec;
+}
+
+static std::vector<int> generate_descending_vector(int size){
+    std::vector<int> vec(size);
+    int n=size;
+    generate(vec.begin(), vec.end(), [&n] { return n--;});
+    return vec;
+}
+static void print(std::vector<int>& a){
+    for(int i:a){
         std::cout<<i<<" ";
     }
     std::cout<<std::endl;
-    for(int i:b){
-        std::cout<<i<<" ";
-    }
-    return 0;
 }
-// using namespace std;
-// using namespace std::chrono;
-
-// void function1();
-
-
-// int main()
-// {
-//     // GET_T1();
-//     high_resolution_clock::time_point t1 = high_resolution_clock::now();
-//     function1();
-//     // GET_T2();
-//     high_resolution_clock::time_point t2 = high_resolution_clock::now();
-
-//     auto duration = duration_cast<microseconds>( t2 - t1 ).count();
-//     int a = duration;
-//     cout << a;
-//     return 0;
-// }
-// void function1()
-// {
-//     long long number = 0;
-
-//     for( long long i = 0; i != 1000; ++i )
-//     {
-//        number += 5;
-//     }
-// }
-// int main() {
-//     std::cout<<std::setw(10)<<50270502;
-//     std::cout<<std::setw(15)<<50270502;
-//     std::cout<<std::setw(15)<<50270502;
-//     std::cout<<std::setw(15)<<50270502;
-//     std::cout<<std::setw(15)<<50270502<<std::endl;
-//     std::cout<<std::setw(10)<<50270502;
-//     std::cout<<std::setw(15)<<50270502;
-//     std::cout<<std::setw(15)<<50270502;
-//     std::cout<<std::setw(15)<<50270502;
-//     std::cout<<std::setw(15)<<50270502<<std::endl;
-//     return 0;
-// }

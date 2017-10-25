@@ -138,7 +138,6 @@ int main() {
 }
 
 static std::vector<int> generate_random_vector(int size){
- 
     // First create an instance of an engine.
     std::random_device rnd_device;
     // Specify the engine and distribution.
